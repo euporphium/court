@@ -6,13 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate": "supabase gen types typescript --project-id fnwragqteguxaoxrrsku > src/schema.ts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/node": "^18.14.5",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
@@ -21,6 +24,7 @@
     "eslint": "^8.35.0",
     "eslint-plugin-react": "^7.32.2",
     "prettier": "^2.8.4",
+    "supabase": "^1.41.1",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
   }
