@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "generate": "supabase gen types typescript --project-id fnwragqteguxaoxrrsku > src/schema.ts"
+    "generate": "supabase gen types typescript --project-id fnwragqteguxaoxrrsku > src/schema.ts",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.10.0",
@@ -26,6 +28,7 @@
     "prettier": "^2.8.4",
     "supabase": "^1.41.1",
     "typescript": "^4.9.3",
-    "vite": "^4.1.0"
+    "vite": "^4.1.0",
+    "vitest": "^0.29.2"
   }
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
 import useSupabaseDb from './hooks/useSupabaseDb';
+import { formatDateYmd } from '@/utils/date';
 
 function App() {
   const [fact, setFact] = useState<string | null>(null);
@@ -11,15 +12,15 @@ function App() {
     const { data } = await supabase
       .from('factsOfTheDay')
       .select('date, fact (text)')
-      .eq('date', new Date(date).toISOString().split('T')[0])
+      .eq('date', formatDateYmd(date))
       .limit(1)
       .maybeSingle();
 
-    console.log(data?.fact?.text);
+    setFact((data?.fact as { text: string }).text);
   }
 
   useEffect(() => {
-    getFactOfDay(new Date()); //.then(c => console.log(c));
+    getFactOfDay().catch(console.error);
   }, []);
 
   return (
