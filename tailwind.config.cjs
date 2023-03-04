@@ -1,8 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,tsx}"],
+  content: ["./src/**/*.{html,tsx}", 'index.html'],
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['"Space Grotesk"', ...require('tailwindcss/defaultTheme').fontFamily.sans]
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/container-queries'),
+  ],
 }
