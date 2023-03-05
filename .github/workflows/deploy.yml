@@ -36,6 +36,3 @@ jobs:
         uses: actions/download-artifact@v3.0.2
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1.2.4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
