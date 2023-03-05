@@ -1,6 +1,7 @@
 {
   "name": "court",
   "private": true,
+  "homepage": "https://euporphium.github.io/court",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,7 +10,9 @@
     "preview": "vite preview",
     "generate": "supabase gen types typescript --project-id fnwragqteguxaoxrrsku > src/schema.ts",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "predeploy": "npm run build",
+    "deploy" : "gh-pages -d dist"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.10.0",
@@ -28,6 +31,7 @@
     "autoprefixer": "^10.4.13",
     "eslint": "^8.35.0",
     "eslint-plugin-react": "^7.32.2",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.4",
